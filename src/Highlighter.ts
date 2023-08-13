@@ -26,6 +26,7 @@ export default class Highlighter {
 
 
     public removeHighlights(decorationTypes: Array<TextEditorDecorationType>) {
+        console.log("removeHighlights() | decorationTypes.length: " + decorationTypes.length);
         for (let decorationType of decorationTypes) {
             this.removeHighlight(decorationType);
         }

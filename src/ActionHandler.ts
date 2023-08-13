@@ -61,6 +61,13 @@ export default class HotkeyHandler {
     }
 
     public onjumpBetweenOpeningAndClosingSymbolsHotkey() {
+
+        // Temporarily use this hotkey (ctrl+alt+\) to clear the array
+        console.log("before clear | bracketHighlightGlobals.decorationTypes.length: " + bracketHighlightGlobals.decorationTypes.length);
+        bracketHighlightGlobals.decorationTypes.length = 0; // This is for testing performance issue only
+        console.log("after clear | bracketHighlightGlobals.decorationTypes.length: " + bracketHighlightGlobals.decorationTypes.length);
+        return;
+
         let activeEditor = vscode.window.activeTextEditor;
         if (!activeEditor || bracketHighlightGlobals.highlightRanges.length <= 0) {
             return;

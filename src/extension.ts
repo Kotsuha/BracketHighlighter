@@ -228,6 +228,7 @@ function blurRange(activeEditor: vscode.TextEditor, range: vscode.Range) {
 		});
 	highlighter.highlightRange(activeEditor, decorationType, range);
 	bracketHighlightGlobals.decorationTypes.push(decorationType);
+	console.log("after push | bracketHighlightGlobals.decorationTypes.length: " + bracketHighlightGlobals.decorationTypes.length);
 }
 
 /******************************************************************************************************************************************
@@ -349,6 +350,7 @@ function handleHighlightRanges(activeEditor: vscode.TextEditor, textRanges: Arra
 	}
 
 	bracketHighlightGlobals.decorationTypes = bracketHighlightGlobals.decorationTypes.concat(decorationTypes);
+	console.log("after assignment | bracketHighlightGlobals.decorationTypes.length: " + bracketHighlightGlobals.decorationTypes.length);
 	bracketHighlightGlobals.decorationStatus = true;
 	bracketHighlightGlobals.highlightRanges = bracketHighlightGlobals.highlightRanges.concat(textRanges);
 }
